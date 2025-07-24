@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 51 100% 50%; /* Amarillo #ffc800 */
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 84% 4.9%; /* Negro para contraste */
+    --primary-foreground: 51 100% 50%; /* Amarillo */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 51 100% 95%; /* Amarillo muy claro */
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 51 100% 90%; /* Amarillo claro */
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 51 100% 50%; /* Amarillo en modo oscuro */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 51 100% 50%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 51 100% 50%;
+    --primary: 51 100% 50%; /* Amarillo */
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 51 100% 50%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 51 100% 50%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 51 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Courier New", "Consolas", "Monaco", "Menlo", "SF Mono", monospace;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Courier New", "Consolas", "Monaco", "Menlo", "SF Mono", monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p,
+  span,
+  div,
+  a,
+  button,
+  input,
+  textarea,
+  label {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-yellow-600 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  /* Estilo especial para el fondo amarillo */
+  .yellow-section {
+    @apply bg-yellow-500;
+  }
+
+  .yellow-card {
+    @apply bg-yellow-100 border-yellow-300;
+  }
+
+  /* Botones outline con fondo blanco y texto negro */
+  .btn-outline-white {
+    @apply bg-white text-black border-white hover:bg-gray-100;
+  }
+
+  /* Cuadrillé celeste para espacios vacíos */
+  .pixel-grid {
+    background-image: linear-gradient(90deg, rgba(135, 206, 235, 0.3) 1px, transparent 1px),
+      linear-gradient(rgba(135, 206, 235, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 0;
+  }
+
+  .pixel-grid-subtle {
+    background-image: linear-gradient(90deg, rgba(135, 206, 235, 0.15) 1px, transparent 1px),
+      linear-gradient(rgba(135, 206, 235, 0.15) 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 0;
+  }
+
+  .pixel-grid-large {
+    background-image: linear-gradient(90deg, rgba(135, 206, 235, 0.25) 2px, transparent 2px),
+      linear-gradient(rgba(135, 206, 235, 0.25) 2px, transparent 2px);
+    background-size: 32px 32px;
+    background-position: 0 0, 0 0;
+  }
+
+  /* Cuadrillé de colores */
+  .pixel-grid-red {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 0;
+  }
+
+  .pixel-grid-blue {
+    background-image: linear-gradient(90deg, rgba(255, 255, 0, 0.25) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 0, 0.25) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 0;
+  }
+
+  .pixel-grid-pink {
+    background-image: linear-gradient(90deg, rgba(0, 255, 255, 0.25) 1px, transparent 1px),
+      linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 0;
+  }
+
+  .pixel-grid-cyan {
+    background-image: linear-gradient(90deg, rgba(255, 200, 0, 0.25) 1px, transparent 1px),
+      linear-gradient(rgba(255, 200, 0, 0.25) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 0;
+  }
+
+  .pixel-grid-green {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 0;
+  }
+
+  /* Efecto pixel art en textos principales */
+  .pixel-text {
+    font-family: "Courier New", "Consolas", "Monaco", "Menlo", "SF Mono", monospace;
+    font-weight: 900;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.15em;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Efecto pixelado adicional para títulos grandes */
+  .pixel-title {
+    font-family: "Courier New", monospace;
+    font-weight: 900;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.2em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+    line-height: 1.1;
+  }
+
+  /* Botones con estilo pixel */
+  .pixel-button {
+    font-family: "Courier New", monospace;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+Actualización para nuevo deploy - 24 de julio 2025

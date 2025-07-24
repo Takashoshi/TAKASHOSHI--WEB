@@ -1,0 +1,1 @@
+Actualización para nuevo deploy - 24 de julio 2025
